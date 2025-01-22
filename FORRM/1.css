@@ -1,0 +1,21 @@
+body{   
+    background:rgb(6, 56, 77);  
+}  
+#frm{  
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 3px 4px 18px #021e20;
+    /* border: solid gray 1px;   */
+    width:25%;  
+    /* border-radius: 20px;   */
+    margin: 120px auto;  
+    /* background: white;   */
+    padding: 50px;  
+}  
+#btn{  
+    color:wheat; 
+    border-radius: 10px; 
+    background: purple;  
+    padding: 10px;  
+    margin-left: 40%;  
+}  
