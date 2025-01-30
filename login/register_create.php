@@ -14,7 +14,7 @@ if($user_name == ''|| $password == ''|| $confirm_password == '')
 
 }
 
-if($password!=$confirm_password)
+if($password !=$confirm_password)
 {
     $_SESSION['error']='Password And Confirm Password Must Be Same ';
     header('location:register.php');
