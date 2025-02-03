@@ -20,6 +20,11 @@
         </div class="form-control">
         <div class="form-control mb-2">
              Division : <input type="text" name="divi">
+             </div>  
+             <div class="form-control mb-2">
+             Select Hobby : <input type="checkbox" name="hobby[]" value="cricket">Cricket
+                            <input type="checkbox" name="hobby[]" value="football">football
+                            <input type="checkbox" name="hobby[]" value="coding">coding
              </div>       
               <div class="mb-2">
             <input type="submit" class="btn btn-danger btn-block" value="insert">
