@@ -1,6 +1,12 @@
 <?php
 // Start the session
 session_start();
+
+if(isset($_SESSION["username"]) )
+{
+    return header("location:dashboard.php");
+}
+
 ?>
 <html>
     <head>
@@ -16,6 +22,7 @@ session_start();
             animation: blink 1s linear infinite;
             }
         </style>
+        
     </head>
     <body class="container">
 

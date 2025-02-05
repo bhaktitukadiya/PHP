@@ -10,24 +10,35 @@ if($user_name == ''|| $password == ''|| $confirm_password == '')
 {
 
     $_SESSION["error"] = "User Name , Password and Confirm Password Required...";
-    header('location:register.php');
+   return @header('location:register.php');
 
 }
 
 if($password !=$confirm_password)
 {
     $_SESSION['error']='Password And Confirm Password Must Be Same ';
-    header('location:register.php');
+   return @header('location:register.php');
 }
 
-$connection=NEW mysqli('localhost','root','','test1');
+$connection=mysqli_connect('localhost','root','','test1');
+
+
+$query1="SELECT * FROM user WHERE `user_name`='$user_name'";
+
+$bosta=mysqli_query($connection,$query1);
+
+if(mysqli_num_rows($bosta))
+{
+    $_SESSION['error']='User Name Already Taken ';
+   return @header('location:register.php');
+}
 
 $query="INSERT INTO user (user_name,password) VALUE('$user_name','$password')";
 
 
-if($connection->query( $query ) === TRUE)
+if(mysqli_query($connection,$query))
 {
-    echo "login successfully";
+    return @header("location:login.php");
 }
 else
 {

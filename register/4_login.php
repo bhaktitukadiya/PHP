@@ -18,7 +18,8 @@
     $count = mysqli_num_rows($result);
 
     if ($count) {
-        echo "Match";
+    
+        header("location:5_read_data.php");
 
     } else {
         echo "Invalid";

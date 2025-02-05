@@ -1,7 +1,29 @@
+<?php
+// Start the session
+session_start();
+
+if(isset($_SESSION["username"]) )
+{
+    return header("location:dashboard.php");
+}
+?>
+
 <html>
 <head>
-    <link rel="stylesheet" href="../bootstrap.css">
-</head>
+        <link rel="stylesheet" href="../bootstrap.css">
+        <style>
+            @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+
+            .blink-text {
+            animation: blink 1s linear infinite;
+            }
+        </style>
+        
+    </head>
 <body class="container">
 
     <?php include 'navbar.php';?>
@@ -18,6 +40,17 @@
 
         <button type="submit" class="btn btn-secondary  btn-block">Login</button>
     </form>
+    
+    <?php
+        if(isset($_SESSION["error"]) )
+        {
+            echo "<b style='color:red' class='blink-text'><blink>".$_SESSION["error"]."</blink></b>"   ;
+            session_unset();
+        }
+
+
+        
+    ?>
 
 </body>
 </html>
