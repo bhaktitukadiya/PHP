@@ -25,9 +25,9 @@ $connection=mysqli_connect('localhost','root','','test1');
 
 $query1="SELECT * FROM user WHERE `user_name`='$user_name'";
 
-$bosta=mysqli_query($connection,$query1);
+$dublicate=mysqli_query($connection,$query1);
 
-if(mysqli_num_rows($bosta))
+if(mysqli_num_rows($dublicate))
 {
     $_SESSION['error']='User Name Already Taken ';
    return @header('location:register.php');

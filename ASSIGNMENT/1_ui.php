@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.css">
     <title>Document</title>
 </head>
 
@@ -10,29 +11,56 @@
 
         
 <form action="2_register.php" method="post">
-<div class="form-group">
-        <label for="exampleInputEmail1">First Name</label>
-        <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<div class="form-group ">
+    <div class="col-6">
+        First Name
+        <input type="text" name="first_name" class="form-control" required>
 
         <div class="form-group">
-        <label for="exampleInputEmail1">Last Name</label>
-        <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+        Last Name
+        <input type="text" name="last_name" class="form-control" required>
+        </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">User Name</label>
-        <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        Date Of Birth 
+        <input type="date" name="bday" class="form-control" required>
     </div>
 
     <div class="form-group">
-        <label for="exampleInputPassword1">Confirm Password</label>
-        <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1">
+       Strem 
+        <input type="text" name="stream" class="form-control" required >
     </div>
 
-    <button type="submit" class="btn btn-secondary  btn-block">Register</button>
+    <div class="form-group">
+        Semester
+        <input type="number" min=1 max=8 name="semester" class="form-control" >
+    </div>
+
+    <div class="form-group">
+        Address 
+        <textarea name="address" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        City
+        <input type="text" name="city" class="form-control">
+    </div>
+
+    <div class="form-group">
+        Pin
+        <input type="number" name="pin" class="form-control">
+    </div>
+
+    <div class="form-group">
+        Contact Number
+        <input type="text"  name="contact" class="form-control">
+    </div>
+
+    <div class="form-group">
+        Email 
+        <input type="email"  name="email" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary  btn-block">Register</button>
 </form>
 
 
