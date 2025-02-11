@@ -108,149 +108,153 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
 </head>
 
-<body class="container">
-    <hr>
-    <h1 class="text-center">Update Student</h1>
-    <hr>
+<body class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-success text-white text-center">
+            <h3>Student Registration Form</h3>
+            <p>Fill out the form to apply for the training courses.</p>
+        </div>
+        <div class="card-body">
 
-    <form action="#" method="post">
+            <form action="#" method="post">
 
-        <input type="hidden" value="<?php echo $studentId ?>">
+                <input type="hidden" value="<?php echo $studentId ?>">
 
-        <?php 
+                <?php 
 
-            if (isset($errors) &&  sizeof($errors) != 0) {
-                ?>
-                <div class="alert alert-danger alert-dismissible d-flex align-items-center fade show">
-                    <i class="bi-exclamation-octagon-fill"></i>
-                    <strong class="mx-2">Error!</strong> 
-                    <ul>
-                        <?php
-                            foreach ($errors as $error) {
-                                echo "<li>". $error ."</li>";    
-                            }
+                    if (isset($errors) &&  sizeof($errors) != 0) {
                         ?>
-                    </ul>
+                        <div class="alert alert-danger alert-dismissible d-flex align-items-center fade show">
+                            <i class="bi-exclamation-octagon-fill"></i>
+                            <strong class="mx-2">Error!</strong> 
+                            <ul>
+                                <?php
+                                    foreach ($errors as $error) {
+                                        echo "<li>". $error ."</li>";    
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+
+                    <?php 
+
+                    }
+
+                ?>    
+                        <div class="row">
+
+                    <div class="form-group col-6">
+                        <label for="first_name">First Name</label>
+                        <input type="text" 
+                            name="first_name" 
+                            class="form-control" 
+                            id="first_name"
+                            value="<?php echo isset($first_name) ? $first_name : '';  ?>"
+                        >
+                    </div>
+                    
+                    <div class="form-group col-6">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" 
+                            name="last_name" 
+                            class="form-control" 
+                            id="last_name"
+                            value="<?php echo isset($last_name) ? $last_name : '' ?>"
+                        >
+                    </div>
                 </div>
 
-            <?php 
-
-            }
-
-        ?>    
                 <div class="row">
-
-            <div class="form-group col-6">
-                <label for="first_name">First Name</label>
-                <input type="text" 
-                    name="first_name" 
-                    class="form-control" 
-                    id="first_name"
-                    value="<?php echo isset($first_name) ? $first_name : '';  ?>"
-                >
-            </div>
+                    <div class="form-group col-6">
+                        <label for="date_of_birth">Birth Date</label>
+                        <input type="date" 
+                            name="date_of_birth" 
+                            class="form-control" 
+                            id="date_of_birth"
+                            value="<?php echo isset($date_of_birth) ? $date_of_birth : '' ?>"
+                        >
+                    </div>
             
-            <div class="form-group col-6">
-                <label for="last_name">Last Name</label>
-                <input type="text" 
-                    name="last_name" 
-                    class="form-control" 
-                    id="last_name"
-                    value="<?php echo isset($last_name) ? $last_name : '' ?>"
-                >
-            </div>
+                    <div class="form-group col-6">
+                        <label for="address">Address</label>
+                        <input type="text" 
+                            name="address" 
+                            class="form-control" 
+                            id="address"
+                            value="<?php echo isset($address) ? $address : '' ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="stream">Stream</label>
+                        <input type="text" 
+                            name="stream" 
+                            class="form-control" 
+                            id="stream"
+                            value="<?php echo isset($stream) ? $stream : '' ?>"
+                        >
+                    </div>
+            
+                    <div class="form-group col-6">
+                        <label for="semester">Semester</label>
+                        <input type="number" 
+                            name="semester" 
+                            class="form-control" 
+                            id="semester"
+                            value="<?php echo isset($semester) ? $semester : '' ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="city">City</label>
+                        <input type="text" 
+                            name="city" 
+                            class="form-control" 
+                            id="city"
+                            value="<?php echo isset($city) ? $city : '' ?>"
+                        >
+                    </div>
+            
+                    <div class="form-group col-6">
+                        <label for="pin">Pin Code</label>
+                        <input type="text" 
+                            name="pin" 
+                            class="form-control" 
+                            id="pin"
+                            value="<?php echo isset($pin) ? $pin : '' ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="contact_number">Contact Number</label>
+                        <input type="text" 
+                            name="contact_number" 
+                            class="form-control" 
+                            id="contact_number"
+                            value="<?php echo isset($contact_number) ? $contact_number : '' ?>"
+                        >
+                    </div>
+            
+                    <div class="form-group col-6">
+                        <label for="email">Email</label>
+                        <input type="email" 
+                            name="email" 
+                            class="form-control" 
+                            id="email"
+                            value="<?php echo isset($email) ? $email : '' ?>"
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-secondary btn-block">Register</button>
+            </form>
         </div>
-
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="date_of_birth">Birth Date</label>
-                <input type="date" 
-                    name="date_of_birth" 
-                    class="form-control" 
-                    id="date_of_birth"
-                    value="<?php echo isset($date_of_birth) ? $date_of_birth : '' ?>"
-                >
-            </div>
-    
-            <div class="form-group col-6">
-                <label for="address">Address</label>
-                <input type="text" 
-                    name="address" 
-                    class="form-control" 
-                    id="address"
-                    value="<?php echo isset($address) ? $address : '' ?>"
-                >
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="stream">Stream</label>
-                <input type="text" 
-                    name="stream" 
-                    class="form-control" 
-                    id="stream"
-                    value="<?php echo isset($stream) ? $stream : '' ?>"
-                >
-            </div>
-    
-            <div class="form-group col-6">
-                <label for="semester">Semester</label>
-                <input type="number" 
-                    name="semester" 
-                    class="form-control" 
-                    id="semester"
-                    value="<?php echo isset($semester) ? $semester : '' ?>"
-                >
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="city">City</label>
-                <input type="text" 
-                    name="city" 
-                    class="form-control" 
-                    id="city"
-                    value="<?php echo isset($city) ? $city : '' ?>"
-                >
-            </div>
-    
-            <div class="form-group col-6">
-                <label for="pin">Pin Code</label>
-                <input type="text" 
-                    name="pin" 
-                    class="form-control" 
-                    id="pin"
-                    value="<?php echo isset($pin) ? $pin : '' ?>"
-                >
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="contact_number">Contact Number</label>
-                <input type="text" 
-                    name="contact_number" 
-                    class="form-control" 
-                    id="contact_number"
-                    value="<?php echo isset($contact_number) ? $contact_number : '' ?>"
-                >
-            </div>
-    
-            <div class="form-group col-6">
-                <label for="email">Email</label>
-                <input type="email" 
-                    name="email" 
-                    class="form-control" 
-                    id="email"
-                    value="<?php echo isset($email) ? $email : '' ?>"
-                >
-            </div>
-        </div>
-
-        <button type="submit" class="btn btn-secondary btn-block">Register</button>
-    </form>
-
+    </div>
 </body>
 </html>
