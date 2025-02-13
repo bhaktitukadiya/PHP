@@ -7,7 +7,7 @@
 
         $query = "DELETE FROM std_registration WHERE id=$id";
 
-        mysqli_query($$connection, $query);
+        mysqli_query($connection, $query);
 
         mysqli_close($connection);
     } else {
