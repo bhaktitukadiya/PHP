@@ -17,14 +17,29 @@
                 <td>DELETE</td>
             </tr>
             <?php
+            $temp=0;
             while($row=mysqli_fetch_assoc($result))
             {
-                echo "<tr>
-                <td>".$row['id']."</td>
+
+                // if($temp%2==0)
+                // {
+                //     $color="gray";
+        
+                // } else{
+                //     $color="";
+
+                // }
+                // $temp++;
+                $color=($temp%2==0)?'lightgray':'';
+
+                echo "<tr bgcolor='$color'>
+                <td >".$row['id']."</td>
                 <td>".$row['user_name']."</td>
                 <td>".$row['password']."</td>
                 <td><a href='delete.php?id=".$row['id']."'> DELETE</a></td>
                 </tr>";
+
+                $temp++;
             }
             ?>
         </table>

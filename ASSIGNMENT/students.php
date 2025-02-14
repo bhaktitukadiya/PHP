@@ -7,12 +7,15 @@ $offset = ($page - 1) * $limit;
 
 // Count total students for pagination
 $countQuery = "SELECT COUNT(*) AS total FROM std_registration";
-$countResult = $connection->query($countQuery);
+
+// $countResult = $connection->query($countQuery);
+$countResult =mysqli_query($connection,$countQuery);
+
 $totalStudents = $countResult->fetch_assoc()['total'];
 $totalPages = ceil($totalStudents / $limit);
 
 // Fetch students with pagination
-$sql = "SELECT * FROM std_registration ORDER BY id DESC LIMIT $limit OFFSET $offset";
+$sql = "SELECT * FROM std_registration LIMIT $limit OFFSET $offset";
 $result = $connection->query($sql);
 
 
@@ -26,22 +29,24 @@ $result = $connection->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Students</title>
     <!-- Bootstrap & DataTables CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="dataTables.bootstrap5.min.js">
 </head>
 <body>
+<div class="card shadow-lg">
+      <div class="card-header bg-success text-white text-center">
 
-<div class="container mt-5">
     <h2 class="text-center">Registered Students</h2>
-
+</div>
+</div>
     <a href="registration.php" class="btn btn-primary btn-sm">
-        Add Student
+        Add New Student
     </a>
 
     
     <table id="studentsTable" class="table table-striped table-bordered">
-        <thead class="table-light">
-            <tr>
+        <thead class="table-dark">
+            <tr >
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -57,19 +62,19 @@ $result = $connection->query($sql);
             </tr>
         </thead>
         <tbody>
-            <?php while ($row = $result->fetch_assoc()) { ?>
+            <?php while ($row =mysqli_fetch_array($result)) { ?>
                 <tr>
-                    <td><?= $row['id']; ?></td>
-                    <td><?= htmlspecialchars($row['first_name']); ?></td>
-                    <td><?= htmlspecialchars($row['last_name']); ?></td>
-                    <td><?= $row['date_of_birth']; ?></td>
-                    <td><?= htmlspecialchars($row['stream']); ?></td>
-                    <td><?= htmlspecialchars($row['semester']); ?></td>
-                    <td><?= htmlspecialchars($row['address']); ?></td>
-                    <td><?= htmlspecialchars($row['city']); ?></td>
-                    <td><?= htmlspecialchars($row['pin']); ?></td>
-                    <td><?= htmlspecialchars($row['contact_number']); ?></td>
-                    <td><?= htmlspecialchars($row['email']); ?></td>
+                    <td><?= $row[0]; ?></td>
+                    <td><?= htmlspecialchars($row[1]); ?></td>
+                    <td><?= htmlspecialchars($row[2]); ?></td>
+                    <td><?= $row[3]; ?></td>
+                    <td><?= htmlspecialchars($row[4]); ?></td>
+                    <td><?= htmlspecialchars($row[5]); ?></td>
+                    <td><?= htmlspecialchars($row[6]); ?></td>
+                    <td><?= htmlspecialchars($row[7]); ?></td>
+                    <td><?= htmlspecialchars($row[8]); ?></td>
+                    <td><?= htmlspecialchars($row[9]); ?></td>
+                    <td><?= htmlspecialchars($row[10]); ?></td>
                     <td>
 
                         <a href="update_student.php?id=<?= $row['id']; ?>" 
