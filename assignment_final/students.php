@@ -74,7 +74,7 @@
     </script>
 </head>
 
-<body class="home-4" style="background-color: #c3c3d3;">
+<body class="home-4">
 
     <?php
         include('header.php');
@@ -84,7 +84,7 @@
 		<div class="">
 			
         <table id="studentTable" class="table table-striped table-bordered">
-            <thead class="table-dark">
+            <thead class="table-light">
                 <tr>
                     <th>ID</th>
                     <th>First Name</th>
