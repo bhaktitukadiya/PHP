@@ -1,9 +1,14 @@
 <?php
 
+session_start();
+
+if(!  isset($_SESSION["authUser"]) )
+{
+    return header("location:index.php");
+}
+
 $id = $_POST['id'];
 $contact_number = $_POST['contact_number'];
-
-session_start();
 
 $_SESSION['errors'] = [] ;
 

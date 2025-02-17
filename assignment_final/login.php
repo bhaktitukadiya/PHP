@@ -8,8 +8,8 @@ $password = $_POST['password'];
 if($email == ''|| $password == '')
 {
 
-    $_SESSION["error"] = "User Name and  Password Required...";
-   return @header('location:index.php');
+    $_SESSION["error"] = "Email and  Password Required...";
+    return @header('location:index.php');
 
 }
 

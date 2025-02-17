@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!  isset($_SESSION["authUser"]) )
+{
+    return header("location:index.php");
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 

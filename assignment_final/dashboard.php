@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(!  isset($_SESSION["authUser"]) )
+{
+    return header("location:index.php");
+}
+
+?>
+
 <html>
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">

@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!  isset($_SESSION["authUser"]) )
+{
+    return header("location:index.php");
+}
+
+?>
 <html>
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -91,7 +100,7 @@
                     <th>Last Name</th>
                     <th>DOB</th>
                     <th>Stream</th>
-                    <th>Semester</th>
+                    <th>Sem</th>
                     <th>Address</th>
                     <th>City</th>
                     <th>Pin</th>

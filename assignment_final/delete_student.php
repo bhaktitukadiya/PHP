@@ -1,5 +1,12 @@
 <?php
 
+    session_start();
+
+    if(!  isset($_SESSION["authUser"]) )
+    {
+        return header("location:index.php");
+    }
+
     if (isset($_GET['id'])) {
         include 'connection.php';
 
