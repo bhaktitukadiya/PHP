@@ -116,8 +116,6 @@ if(!  isset($_SESSION["authUser"]) )
 
 		</div>
 	</section>
-	
-
 </body>
 
 </html>

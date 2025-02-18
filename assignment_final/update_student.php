@@ -259,18 +259,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 							</div>
 						</div>
 						<div class="row mt-20">
-							<div class="col-1"></div>
-							<div class="col-10">
-								<div class="row">
-
-									<button 
-										type="submit" 
-										class="btn btn-secondary btn-block col-12" 
-										>Update</button>
-									</div>
-								</div>
-							</div>
-						<div class="col-1"></div>
+							<button type="submit" class="btn btn-primary btn-block mt-10 col-12" style="background:#2b2c4b">
+								Update
+							</button>
+						</div>
 					</form>
 					</div>
 				</div>

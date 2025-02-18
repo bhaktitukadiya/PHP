@@ -23,7 +23,20 @@ if(!  isset($_SESSION["authUser"]) )
 
     <section id="bi-about-4" class="bi-about-section-4">
 		<div class="container">
-			Welcome to Dashboard
+			<div class="row">
+
+			</div>
+			<div class="card text-dark">
+				<div class="card-body">
+					<h5 class="card-title">Student Management</h5>
+					<p class="card-text">
+						Welcome Admin ! <br/> 
+					</p>
+					<p>
+						Admin Can search student data using id and contact number, update data, Register new Student and datatable to see all student record .    
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 	

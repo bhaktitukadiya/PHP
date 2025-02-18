@@ -14,7 +14,10 @@
 
         $query = "DELETE FROM std_registration WHERE id=$id";
 
-        mysqli_query($connection, $query);
+        if(mysqli_query($connection, $query))
+        {
+            @header("location:students.php");
+        }
 
         mysqli_close($connection);
     } else {

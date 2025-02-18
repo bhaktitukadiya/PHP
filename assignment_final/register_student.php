@@ -6,7 +6,6 @@ if(!  isset($_SESSION["authUser"]) )
     return header("location:index.php");
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 
     $errors = [];
@@ -41,14 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
         include("connection.php");
 
         //Check For Duplicate
-        $duplicateQuery ="SELECT id FROM std_registration WHERE email = '$email' AND contact_number = '$contact_number'";
+        $duplicateQuery ="SELECT id FROM std_registration WHERE email = '$email' OR contact_number = '$contact_number'";
 
         $ifDuplicate=mysqli_query($connection,$duplicateQuery);
 
         if( mysqli_num_rows($ifDuplicate ))
         {
             array_push($errors, "Email or Contact Number already exists!");
-
         } else {
 
             $query = "
@@ -258,23 +256,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
 								>
 							</div>
 						</div>
-						<div class="row mt-20">
-							<div class="col-1"></div>
-							<div class="col-10">
-								<div class="row">
-
-									<button 
-										type="submit" 
-										class="btn btn-secondary btn-block col-12" 
-										>Register</button>
-									</div>
-								</div>
-							</div>
-						<div class="col-1"></div>
+						<div class="row">
+							<button type="submit" class="btn btn-primary btn-block mt-10 col-12" style="background:#2b2c4b">
+								Register
+							</button>
+						</div>
 					</form>
-					</div>
 				</div>
-
+			</div>
 		</div>
 	</section>
 	
